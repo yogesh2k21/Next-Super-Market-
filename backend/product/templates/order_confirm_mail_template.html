@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Summary</title>
+    <style>
+        tr:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="font-size: x-large;margin-bottom: 2rem;">Next Super Market</div>
+    <div style="font-size: larger;">GSTIN :- XXXXXXXXXXXXX</div>
+    <div style="font-size: larger;">PAN :- XXXXXXXXXXXXX</div>
+    <div style="font-size: larger;">CIN :- XXXXXXXXXXXXX</div>
+    <hr style="margin-top: 2rem;">
+    <div style="font-size: larger;margin-top: 2rem;">Order ID :- {{order_id}}</div>
+    <div style="font-size: larger;">Order Date :- {{order_date}}</div>
+    <div style="font-size: larger;">Customer Name :- {{user_name}}</div>
+    <div style="font-size: larger;">Phone :- {{user_phone}}</div>
+    <div style="font-size: larger;">Email :- {{user_mail}}</div>
+    <div style="font-size: larger;">Shipping Address :- {{address}}</div>
+    <div style="padding: 3rem;">
+        <table style="font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;">
+            <tr style="border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;">
+                <th style="padding: 10px;">Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+            {% for p in items %}
+            <tr>
+                <td style="padding: 10px;">{{p.title |upper }}</td>
+                <td style="padding: 10px;">{{p.quantity}}</td>
+                <td style="padding: 10px;">${{p.total}}</td>
+            </tr>
+            {% endfor %}
+            <tr>
+                <td style="padding: 10px;"></td>
+                <td style="padding: 10px;">Grand Total</td>
+                <td style="color:#6366F1;padding: 10px;">${{amount}}</td>
+            </tr>
+        </table>
+    </div>
+    <h3 style="display: flex;justify-content: center;">Will be delivered within 4-5 days</h3>
+
+
+    <span style="font-weight: bold;">Returns Policy</span>:At Next Super Market we try to deliver perfectly each and every time. But in the off-chance that you need to return the item, please do so with the original Brand box/price
+    tag, original packing and invoice without which it will be really difficult for us to act on your request. Please help us in helping you. Terms and conditions apply.
+b
+    Regd. office: Next Super Market , 302, Solitaire, Sunrise Park, Vastrapur Himalaya Mall Link Road, Delhi, INDIA
+
+
+    this is auto-generated email do not reply.
+</body>
+
+</html>
